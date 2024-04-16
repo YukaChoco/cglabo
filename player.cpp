@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cctype>
-#include "gameCard.cpp"
 
 using namespace std;
 
@@ -42,13 +41,6 @@ public:
     int getScore()
     {
         return score;
-    }
-
-    // カードをめくる関数
-    void flipCard(GameCard card)
-    {
-        // カードをめくる
-        card.printCard();
     }
 
     // 点数を加算する関数
