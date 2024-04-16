@@ -1,5 +1,5 @@
 #include <iostream>
-#include "gameCard.cpp"
+#include "player.cpp"
 
 // 実行方法
 // g++ -o main main.cpp card.cpp
@@ -8,6 +8,16 @@ using namespace std;
 
 int main()
 {
+    // 2名のプレイヤーを生成
+    Player player1;
+    Player player2;
+
+    // プレイヤーの名前を設定
+    player1.setName();
+    player2.setName();
+
+    cout << player1.getName() << " vs " << player2.getName() << endl;
+
     // 5つのカードを生成
     GameCard cards[] = {
         GameCard(1, 5, Spade),
