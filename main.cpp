@@ -1,5 +1,5 @@
 #include <iostream>
-#include "card.cpp"
+#include "trampCard.cpp"
 
 // 実行方法
 // g++ -o main main.cpp card.cpp
