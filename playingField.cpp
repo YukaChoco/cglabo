@@ -82,9 +82,7 @@ public:
             } while (isDuplicate);
 
             // カードを生成
-            cards[i].setCardNumber(i + 1);
             cards[i].setCard(num, suit);
-            cards[10 + i].setCardNumber(10 + i + 1);
             cards[10 + i].setCard(num, suit);
         }
 
@@ -95,6 +93,12 @@ public:
             GameCard tmp = cards[i];
             cards[i] = cards[random];
             cards[random] = tmp;
+        }
+
+        // カード番号を設定
+        for (int i = 0; i < cardNum; i++)
+        {
+            cards[i].setCardNumber(i + 1);
         }
     }
 
