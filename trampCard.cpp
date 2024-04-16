@@ -21,8 +21,9 @@ struct TrampCard
     // コンストラクタ
     TrampCard(int num, Suit st) : number(num), suit(st) {}
 
+protected:
     // トランプのカードを表示する関数
-    void printCard()
+    void printTramp()
     {
         // ジョーカーの場合は数字を表示しない
         if (suit == Joker)
