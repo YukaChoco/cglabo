@@ -43,12 +43,14 @@ public:
             int flipCount = 0;
             int flipCardNumber[2] = {0, 0};
 
-            cout << endl
-                 << endl;
+            cout << "\n\n\n\n\n\n\n";
             cout << "*                                               *" << endl;
             cout << "  " << player[currentPlayerIndex].getName() << " のターン" << endl;
             cout << "*                                               *\n"
                  << endl;
+            playingField.printField();
+            printCurrentScore();
+            cout << "\n\n\n\n\n\n\n";
 
             while (flipCount < 2)
             {
@@ -85,6 +87,16 @@ public:
                 cout << "もう一度挑戦できます\n"
                      << endl;
                 player[currentPlayerIndex].addScore();
+                playingField.resetCard();
+                cout << "\n\n\n";
+                cout << "続けますか？(y/n):";
+                char ok;
+                cin >> ok;
+                cout << "\n\n\n";
+                if (tolower(ok) == 'n')
+                {
+                    currentPlayerIndex = (currentPlayerIndex + 1) % 2;
+                }
             }
             else
             {
@@ -110,11 +122,13 @@ private:
     // 現在のスコアを表示する関数
     void printCurrentScore()
     {
+        cout << "\n\n\n";
         // 左にPlayer0のスコア、右にPlayer1のスコアを表示
         cout << "-------------------------------------------------" << endl;
         cout << "  " << player[0].getName() << " のスコア | " << player[0].getScore();
         cout << "        " << player[1].getScore() << " | " << player[1].getName() << " のスコア" << endl;
         cout << "-------------------------------------------------" << endl;
+        cout << "\n\n\n";
     }
     // 最終的なスコアを表示する関数
     void printScore()

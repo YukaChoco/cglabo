@@ -103,20 +103,23 @@ public:
     }
 
     // カードを表示する関数
-    void printCard()
+    void printField()
     {
+        cout << "\n\n\n\n\n";
         for (int i = 0; i < rowNum; i++)
         {
-            cout << "+------------+  +------------+  +------------+  +------------+  +------------+" << endl;
+            cout << endl;
+            cout << "+------------+    +------------+    +------------+    +------------+    +------------+" << endl;
             for (int j = 0; j < columnNum; j++)
             {
                 cout << "|  ";
                 cards[i * columnNum + j].printCard();
-                cout << "  |  ";
+                cout << "  |    ";
             }
             cout << endl;
-            cout << "+------------+  +------------+  +------------+  +------------+  +------------+" << endl;
+            cout << "+------------+    +------------+    +------------+    +------------+    +------------+" << endl;
         }
+        cout << "\n\n\n\n\n";
     }
 
     // カードをめくる関数
@@ -136,7 +139,7 @@ public:
         {
             cards[cardIndex].setFaceUp(true);
             // 今の状態を表示
-            printCard();
+            printField();
             return true;
         }
     }
