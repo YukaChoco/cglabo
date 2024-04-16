@@ -105,11 +105,19 @@ public:
 
             // カードをめくる
             int cardNumber = 0;
-            do
+            while (1)
             {
                 cout << "めくるカードの番号を入力してください(1~20): ";
                 cin >> cardNumber;
-            } while (cardNumber < 1 || cardNumber > 20);
+                if (cardNumber < 1 || cardNumber > 20)
+                {
+                    cout << "Error: 不適切な番号が入力されました" << endl;
+                }
+                else
+                {
+                    break;
+                }
+            }
             player[i % 2].flipCard(cards[cardNumber - 1]);
         }
 
