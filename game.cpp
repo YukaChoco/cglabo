@@ -104,7 +104,13 @@ public:
             cout << "Player" << i % 2 + 1 << " のターン" << i + 1 << endl;
 
             // カードをめくる
-            player[i % 2].flipCard(cards[i]);
+            int cardNumber = 0;
+            do
+            {
+                cout << "めくるカードの番号を入力してください(1~20): ";
+                cin >> cardNumber;
+            } while (cardNumber < 1 || cardNumber > 20);
+            player[i % 2].flipCard(cards[cardNumber - 1]);
         }
 
         // 結果を表示
