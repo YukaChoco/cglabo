@@ -19,17 +19,25 @@ public:
     // コンストラクタ
     Player() : score(0) {}
 
+    // プレイヤーの名前を設定する関数
+    void setPlayerNumber(int num)
+    {
+        playerNumber = num;
+    }
+
     // 名前を設定する関数
     void setName()
     {
         cout << "Player" << playerNumber << " の名前を入力してください: ";
         cin >> name;
     }
+
     // 名前を取得する関数
     string getName()
     {
         return name;
     }
+
     // 点数を取得する関数
     int getScore()
     {

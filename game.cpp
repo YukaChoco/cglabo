@@ -22,7 +22,9 @@ public:
              << endl;
 
         // プレイヤーの名前を設定
+        player[0].setPlayerNumber(0);
         player[0].setName();
+        player[1].setPlayerNumber(1);
         player[1].setName();
 
         // 10組のカードを生成
