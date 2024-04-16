@@ -8,17 +8,19 @@ using namespace std;
 
 int main()
 {
-    // 4つのカードを作成
-    TrampCard card1 = {1, Spade};
-    TrampCard card2 = {13, Heart};
-    TrampCard card3 = {10, Diamond};
-    TrampCard card4 = {4, Club};
+    // 5つのカードを作成
+    TrampCard card1(1, Spade);
+    TrampCard card2(13, Heart);
+    TrampCard card3(10, Diamond);
+    TrampCard card4(4, Club);
+    TrampCard card5(0, Joker);
 
-    // 4つのカードを表示
+    // 5つのカードを表示
     card1.printCard();
     card2.printCard();
     card3.printCard();
     card4.printCard();
+    card5.printCard();
 
     return 0;
 }
