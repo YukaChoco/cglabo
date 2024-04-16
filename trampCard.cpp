@@ -28,18 +28,18 @@ protected:
         // ジョーカーの場合は数字を表示しない
         if (suit == Joker)
         {
-            cout << "*Joker*" << endl;
+            cout << " *Joker*";
         }
         else
         {
             // スートを表示
-            cout << " " << static_cast<char>(suit) << "  ";
+            cout << "  " << static_cast<char>(suit) << " ";
             // 数字を表示(2文字で表示)
             if (number < 10)
             {
                 cout << " ";
             }
-            cout << number << " " << endl;
+            cout << number << "  ";
         }
     }
 };

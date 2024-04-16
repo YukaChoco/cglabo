@@ -16,6 +16,9 @@ struct GameCard : public TrampCard
     // カードを表示する関数
     void printCard(bool isFaceUp = true)
     {
+        cout << "+------------+" << endl;
+        cout << "|            |" << endl;
+        cout << "|  ";
         // 表面を表示する場合
         if (isFaceUp)
         {
@@ -26,6 +29,9 @@ struct GameCard : public TrampCard
         {
             printBack();
         }
+        cout << "  |" << endl;
+        cout << "|            |" << endl;
+        cout << "+------------+" << endl;
     }
 
 private:
@@ -44,6 +50,6 @@ private:
         {
             cout << " ";
         }
-        cout << "  " << cardNumber << "   " << endl;
+        cout << "   " << cardNumber << "   ";
     }
 };

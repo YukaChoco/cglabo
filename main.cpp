@@ -14,7 +14,7 @@ int main()
         GameCard(2, 10, Heart),
         GameCard(3, 12, Diamond),
         GameCard(4, 4, Club),
-        GameCard(5, 3, Joker),
+        GameCard(20, 3, Joker),
     };
 
     // 5つのカードを表示(表面)
