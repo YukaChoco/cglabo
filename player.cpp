@@ -48,7 +48,7 @@ public:
     void flipCard(GameCard card)
     {
         // カードをめくる
-        card.printCard(true);
+        card.printCard();
     }
 
     // 点数を加算する関数

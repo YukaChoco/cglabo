@@ -10,10 +10,12 @@ struct GameCard : public TrampCard
 private:
     // 1~20の数字をメンバに持つ
     int cardNumber;
+    // 表面か裏面かを判定するフラグ
+    bool isFaceUp;
 
 public:
     // コンストラクタ
-    GameCard() : TrampCard() {}
+    GameCard() : isFaceUp(false), TrampCard() {}
 
     // cardNumberを設定する関数
     void setCardNumber(int num)
@@ -21,8 +23,14 @@ public:
         cardNumber = num;
     }
 
+    // 裏表を設定する関数
+    void setFaceUp(bool faceUp)
+    {
+        isFaceUp = faceUp;
+    }
+
     // カードを表示する関数
-    void printCard(bool isFaceUp = true)
+    void printCard()
     {
         cout << "+------------+" << endl;
         cout << "|            |" << endl;
