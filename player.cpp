@@ -42,4 +42,11 @@ public:
         // カードをめくる
         card.printCard(true);
     }
+
+private:
+    // 点数を加算する関数
+    void addScore()
+    {
+        score += 10;
+    }
 };
