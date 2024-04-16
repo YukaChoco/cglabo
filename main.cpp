@@ -6,7 +6,8 @@
 
 using namespace std;
 
-int main(){
+int main()
+{
     // 4つのカードを作成
     TrampCard card1 = {1, Spade};
     TrampCard card2 = {13, Heart};
