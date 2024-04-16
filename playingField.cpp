@@ -106,6 +106,28 @@ public:
     // カードをめくる関数
     void flipCard(int num)
     {
-        cards[num].setFaceUp(true);
+        if (cards[num].getPaired() == true)
+        {
+            cout << "Error: そのカードは既になくなっています" << endl;
+            return;
+        }
+        else if (cards[num].getFaceUp() == true)
+        {
+            cout << "Error: そのカードは既にめくられています" << endl;
+            return;
+        }
+        else
+        {
+            cards[num].setFaceUp(true);
+        }
+    }
+
+    // カードの裏返しをリセットする関数
+    void resetCard()
+    {
+        for (int i = 0; i < cardNum; i++)
+        {
+            cards[i].setFaceUp(false);
+        }
     }
 };

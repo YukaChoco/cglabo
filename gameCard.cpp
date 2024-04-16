@@ -12,10 +12,12 @@ private:
     int cardNumber;
     // 表面か裏面かを判定するフラグ
     bool isFaceUp;
+    // ペアが揃ったかどうかを判定するフラグ
+    bool isPaired;
 
 public:
     // コンストラクタ
-    GameCard() : isFaceUp(false), TrampCard() {}
+    GameCard() : isFaceUp(false), isPaired(false), TrampCard() {}
 
     // cardNumberを設定する関数
     void setCardNumber(int num)
@@ -23,10 +25,26 @@ public:
         cardNumber = num;
     }
 
+    // 裏表を取得する関数
+    bool getFaceUp()
+    {
+        return isFaceUp;
+    }
     // 裏表を設定する関数
     void setFaceUp(bool faceUp)
     {
         isFaceUp = faceUp;
+    }
+
+    // ペアが揃ったかどうかを取得する関数
+    bool getPaired()
+    {
+        return isPaired;
+    }
+    // ペアが揃ったかどうかを設定する関数
+    void setPaired(bool paired)
+    {
+        isPaired = paired;
     }
 
     // カードを表示する関数
@@ -36,11 +54,15 @@ public:
         cout << "|            |" << endl;
         cout << "|  ";
         // 表面を表示する場合
-        if (isFaceUp)
+
+        if (isPaired)
+        {
+            printBlankCard();
+        }
+        else if (isFaceUp)
         {
             printTramp();
         }
-        // 裏面を表示する場合
         else
         {
             printBack();
