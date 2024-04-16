@@ -17,7 +17,7 @@ private:
 
 public:
     // コンストラクタ
-    Player(int num) : playerNumber(num), score(0) {}
+    Player() : score(0) {}
 
     // 名前を設定する関数
     void setName()

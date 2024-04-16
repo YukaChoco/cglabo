@@ -16,11 +16,29 @@ enum Suit
 struct TrampCard
 {
     // コンストラクタ
-    TrampCard(int num, Suit st) : number(num), suit(st) {}
+    TrampCard() {}
 
 protected:
     int number; // 数字
     Suit suit;  // スート
+
+public:
+    // カードを設定する関数
+    void setCard(int num, Suit st)
+    {
+        number = num;
+        suit = st;
+    }
+    // 数字を取得する関数
+    int getNumber()
+    {
+        return number;
+    }
+    // スートを取得する関数
+    Suit getSuit()
+    {
+        return suit;
+    }
 
     // トランプのカードを表示する関数
     void printTramp()

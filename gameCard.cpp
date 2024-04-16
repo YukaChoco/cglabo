@@ -13,7 +13,13 @@ private:
 
 public:
     // コンストラクタ
-    GameCard(int cardNumber, int num, Suit st) : TrampCard(num, st), cardNumber(cardNumber) {}
+    GameCard() : TrampCard() {}
+
+    // cardNumberを設定する関数
+    void setCardNumber(int num)
+    {
+        cardNumber = num;
+    }
 
     // カードを表示する関数
     void printCard(bool isFaceUp = true)
