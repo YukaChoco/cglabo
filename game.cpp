@@ -114,21 +114,33 @@ public:
             cout << "Player" << i % 2 + 1 << " のターン" << i + 1 << endl;
 
             // カードをめくる
-            int cardNumber = 0;
-            while (1)
+            int flipCount = 0;
+            int flipCardNumber[2] = {0, 0};
+            while (flipCount < 2)
             {
                 cout << "めくるカードの番号を入力してください(1~20): ";
-                cin >> cardNumber;
-                if (cardNumber < 1 || cardNumber > 20)
+                cin >> flipCardNumber[flipCount];
+                if (flipCardNumber[flipCount] < 1 || flipCardNumber[flipCount] > 20)
                 {
                     cout << "Error: 不適切な番号が入力されました" << endl;
                 }
                 else
                 {
-                    break;
+                    if (flipCount == 1 && flipCardNumber[0] == flipCardNumber[1])
+                    {
+                        cout << "Error: 同じカードを2回めくることはできません" << endl;
+                    }
+                    else
+                    {
+                        player[i % 2].flipCard(cards[flipCardNumber[flipCount] - 1]);
+                        flipCount++;
+                    }
                 }
             }
-            player[i % 2].flipCard(cards[cardNumber - 1]);
+            if (cards[flipCardNumber[0] - 1].getNumber() == cards[flipCardNumber[1] - 1].getNumber() && cards[flipCardNumber[0] - 1].getSuit() == cards[flipCardNumber[1] - 1].getSuit())
+            {
+                player[i % 2].addScore();
+            }
         }
 
         // 結果を表示
