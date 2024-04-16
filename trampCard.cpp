@@ -15,13 +15,13 @@ enum Suit
 // トランプのカードを表す構造体
 struct TrampCard
 {
-    int number; // 数字
-    Suit suit;  // スート
-
     // コンストラクタ
     TrampCard(int num, Suit st) : number(num), suit(st) {}
 
 protected:
+    int number; // 数字
+    Suit suit;  // スート
+
     // トランプのカードを表示する関数
     void printTramp()
     {

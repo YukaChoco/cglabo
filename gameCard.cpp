@@ -7,9 +7,6 @@ using namespace std;
 // ゲームで使用するカードをトランプのカードから派生させる
 struct GameCard : public TrampCard
 {
-    // 1~20の数字をメンバに持つ
-    int cardNumber;
-
     // コンストラクタ
     GameCard(int cardNumber, int num, Suit st) : TrampCard(num, st), cardNumber(cardNumber) {}
 
@@ -35,6 +32,9 @@ struct GameCard : public TrampCard
     }
 
 private:
+    // 1~20の数字をメンバに持つ
+    int cardNumber;
+
     // カードの裏面を表示する関数
     void printBack()
     {
