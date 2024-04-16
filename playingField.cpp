@@ -104,23 +104,24 @@ public:
     }
 
     // カードをめくる関数
-    void flipCard(int num)
+    bool flipCard(int num)
     {
         if (cards[num].getPaired() == true)
         {
             cout << "Error: そのカードは既になくなっています" << endl;
-            return;
+            return false;
         }
         else if (cards[num].getFaceUp() == true)
         {
             cout << "Error: そのカードは既にめくられています" << endl;
-            return;
+            return false;
         }
         else
         {
             cards[num].setFaceUp(true);
             // 今の状態を表示
             printCard();
+            return true;
         }
     }
 

@@ -66,8 +66,10 @@ public:
                     }
                     else
                     {
-                        playingField.flipCard(flipCardNumber[flipCount]);
-                        flipCount++;
+                        if (playingField.flipCard(flipCardNumber[flipCount]))
+                        {
+                            flipCount++;
+                        }
                     }
                 }
             }
