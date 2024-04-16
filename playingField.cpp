@@ -10,6 +10,10 @@ class PlayingField
 private:
     // カードの枚数
     static const int cardNum = 20;
+    // カードの列数
+    static const int columnNum = 5;
+    // カードの行数
+    static const int rowNum = cardNum / columnNum;
 
 public:
     // カードの配列
@@ -97,15 +101,17 @@ public:
     // カードを表示する関数
     void printCard()
     {
-        for (int i = 0; i < cardNum; i++)
+        for (int i = 0; i < rowNum; i++)
         {
-            cout << "+------------+" << endl;
-            cout << "|            |" << endl;
-            cout << "|  ";
-            cards[i].printCard();
-            cout << "  |" << endl;
-            cout << "|            |" << endl;
-            cout << "+------------+" << endl;
+            cout << "+------------+  +------------+  +------------+  +------------+  +------------+" << endl;
+            for (int j = 0; j < columnNum; j++)
+            {
+                cout << "|  ";
+                cards[i * columnNum + j].printCard();
+                cout << "  |  ";
+            }
+            cout << endl;
+            cout << "+------------+  +------------+  +------------+  +------------+  +------------+" << endl;
         }
     }
 
