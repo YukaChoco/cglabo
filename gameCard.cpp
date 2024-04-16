@@ -30,6 +30,15 @@ struct GameCard : public TrampCard
         cout << "|            |" << endl;
         cout << "+------------+" << endl;
     }
+    // 既にめくり終えた部分を表示する関数
+    void printBlankCard()
+    {
+        cout << "              " << endl;
+        cout << "              " << endl;
+        cout << "              " << endl;
+        cout << "              " << endl;
+        cout << "              " << endl;
+    }
 
 private:
     // 1~20の数字をメンバに持つ
