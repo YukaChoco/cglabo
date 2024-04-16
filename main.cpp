@@ -9,14 +9,17 @@ using namespace std;
 int main()
 {
     // 2名のプレイヤーを生成
-    Player player1;
-    Player player2;
+    Player player[] = {Player(1), Player(2)};
 
     // プレイヤーの名前を設定
-    player1.setName();
-    player2.setName();
+    player[0].setName();
+    player[1].setName();
 
-    cout << player1.getName() << " vs " << player2.getName() << endl;
+    cout << player[0].getName() << " vs " << player[1].getName() << endl;
+
+    // プレイヤーのスコアを表示
+    cout << player[0].getName() << " のスコア: " << player[0].getScore() << endl;
+    cout << player[1].getName() << " のスコア: " << player[1].getScore() << endl;
 
     // 5つのカードを生成
     GameCard cards[] = {
