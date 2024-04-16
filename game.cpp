@@ -97,6 +97,16 @@ public:
     {
         cout << player[0].getName() << " vs " << player[1].getName() << endl;
 
+        // カードをシャッフル
+        for (int i = 0; i < 100; i++)
+        {
+            int random1 = rand() % 20;
+            int random2 = rand() % 20;
+            GameCard tmp = cards[random1];
+            cards[random1] = cards[random2];
+            cards[random2] = tmp;
+        }
+
         // ゲームを進行
         for (int i = 0; i < 20; i++)
         {
