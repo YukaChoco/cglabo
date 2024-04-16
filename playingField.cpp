@@ -99,7 +99,13 @@ public:
     {
         for (int i = 0; i < cardNum; i++)
         {
+            cout << "+------------+" << endl;
+            cout << "|            |" << endl;
+            cout << "|  ";
             cards[i].printCard();
+            cout << "  |" << endl;
+            cout << "|            |" << endl;
+            cout << "+------------+" << endl;
         }
     }
 

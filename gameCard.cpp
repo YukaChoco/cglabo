@@ -50,11 +50,6 @@ public:
     // カードを表示する関数
     void printCard()
     {
-        cout << "+------------+" << endl;
-        cout << "|            |" << endl;
-        cout << "|  ";
-        // 表面を表示する場合
-
         if (isPaired)
         {
             printBlankCard();
@@ -67,18 +62,6 @@ public:
         {
             printBack();
         }
-        cout << "  |" << endl;
-        cout << "|            |" << endl;
-        cout << "+------------+" << endl;
-    }
-    // 既にめくり終えた部分を表示する関数
-    void printBlankCard()
-    {
-        cout << "              " << endl;
-        cout << "              " << endl;
-        cout << "              " << endl;
-        cout << "              " << endl;
-        cout << "              " << endl;
     }
 
 private:
@@ -98,5 +81,11 @@ private:
             cout << " ";
         }
         cout << "   " << cardNumber << "   ";
+    }
+
+    // 既にめくり終えた部分を表示する関数
+    void printBlankCard()
+    {
+        cout << "paired !";
     }
 };
