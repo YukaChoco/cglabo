@@ -119,11 +119,39 @@ public:
         else
         {
             cards[num].setFaceUp(true);
+            // 今の状態を表示
+            printCard();
         }
     }
 
+    // カードのペアが揃ったかどうかを判定する関数
+    bool checkPair(int num1, int num2)
+    {
+        if (cards[num1].getNumber() == cards[num2].getNumber() && cards[num1].getSuit() == cards[num2].getSuit())
+        {
+            cards[num1].setPaired(true);
+            cards[num2].setPaired(true);
+            return true;
+        }
+        return false;
+    }
+
+    // 全てのカードがペアになったかどうかを判定する関数
+    bool isAllPaired()
+    {
+        for (int i = 0; i < cardNum; i++)
+        {
+            if (cards[i].getPaired() == false)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     // カードの裏返しをリセットする関数
-    void resetCard()
+    void
+    resetCard()
     {
         for (int i = 0; i < cardNum; i++)
         {
