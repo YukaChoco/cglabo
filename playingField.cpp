@@ -9,9 +9,9 @@ class PlayingField
 {
 private:
     // カードの枚数
-    static const int cardNum = 20;
+    static const int cardNum = 16;
     // カードの列数
-    static const int columnNum = 5;
+    static const int columnNum = 4;
     // カードの行数
     static const int rowNum = cardNum / columnNum;
 
@@ -26,7 +26,7 @@ public:
         srand((unsigned)time(NULL));
 
         // 10組のカードを生成
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < cardNum / 2; i++)
         {
             // 重複判定用のフラグ
             bool isDuplicate = false;
@@ -112,7 +112,11 @@ public:
         for (int i = 0; i < rowNum; i++)
         {
             cout << endl;
-            cout << "+------------+    +------------+    +------------+    +------------+    +------------+" << endl;
+            for (int j = 0; j < columnNum; j++)
+            {
+                cout << "+------------+    ";
+            }
+            cout << endl;
             for (int j = 0; j < columnNum; j++)
             {
                 cout << "|  ";
@@ -120,7 +124,11 @@ public:
                 cout << "  |    ";
             }
             cout << endl;
-            cout << "+------------+    +------------+    +------------+    +------------+    +------------+" << endl;
+            for (int j = 0; j < columnNum; j++)
+            {
+                cout << "+------------+    ";
+            }
+            cout << endl;
         }
         cout << "\n\n\n\n\n";
     }
