@@ -103,6 +103,12 @@ public:
                 cout << "残念！ ペアではありませんでした" << endl;
                 playingField.resetCard();
                 currentPlayerIndex = (currentPlayerIndex + 1) % 2;
+                cout << "\n\n\n";
+                cout << "次のプレイヤーのターンです。交代したらEnterを押してください。\n"
+                     << endl;
+                cin.ignore();
+                cin.get();
+                cout << "\n\n\n";
             }
 
             // 今の状態を表示
