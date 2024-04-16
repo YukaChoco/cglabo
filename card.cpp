@@ -11,7 +11,7 @@ enum Suit{
 };
 
 // トランプのカードを表す構造体
-struct Card{
+struct TrampCard{
     int number; // 数字
     Suit suit; // スート
     // トランプのカードを表示する関数

@@ -8,10 +8,10 @@ using namespace std;
 
 int main(){
     // 4つのカードを作成
-    Card card1 = {1, Spade};
-    Card card2 = {13, Heart};
-    Card card3 = {10, Diamond};
-    Card card4 = {4, Club};
+    TrampCard card1 = {1, Spade};
+    TrampCard card2 = {13, Heart};
+    TrampCard card3 = {10, Diamond};
+    TrampCard card4 = {4, Club};
 
     // 4つのカードを表示
     card1.printCard();
