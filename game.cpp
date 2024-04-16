@@ -66,7 +66,7 @@ public:
                     }
                     else
                     {
-                        if (playingField.flipCard(flipCardNumber[flipCount]))
+                        if (playingField.flipCard(flipCardNumber[flipCount] - 1))
                         {
                             flipCount++;
                         }
@@ -74,7 +74,7 @@ public:
                 }
             }
 
-            bool isPaired = playingField.checkPair(flipCardNumber[0], flipCardNumber[1]);
+            bool isPaired = playingField.checkPair(flipCardNumber[0] - 1, flipCardNumber[1] - 1);
 
             if (isPaired)
             {

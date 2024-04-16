@@ -116,21 +116,21 @@ public:
     }
 
     // カードをめくる関数
-    bool flipCard(int num)
+    bool flipCard(int cardIndex)
     {
-        if (cards[num].getPaired() == true)
+        if (cards[cardIndex].getPaired() == true)
         {
             cout << "Error: そのカードは既になくなっています" << endl;
             return false;
         }
-        else if (cards[num].getFaceUp() == true)
+        else if (cards[cardIndex].getFaceUp() == true)
         {
             cout << "Error: そのカードは既にめくられています" << endl;
             return false;
         }
         else
         {
-            cards[num].setFaceUp(true);
+            cards[cardIndex].setFaceUp(true);
             // 今の状態を表示
             printCard();
             return true;
@@ -138,12 +138,12 @@ public:
     }
 
     // カードのペアが揃ったかどうかを判定する関数
-    bool checkPair(int num1, int num2)
+    bool checkPair(int index1, int index2)
     {
-        if (cards[num1].getNumber() == cards[num2].getNumber() && cards[num1].getSuit() == cards[num2].getSuit())
+        if (cards[index1].getNumber() == cards[index2].getNumber() && cards[index1].getSuit() == cards[index2].getSuit())
         {
-            cards[num1].setPaired(true);
-            cards[num2].setPaired(true);
+            cards[index1].setPaired(true);
+            cards[index2].setPaired(true);
             return true;
         }
         return false;
