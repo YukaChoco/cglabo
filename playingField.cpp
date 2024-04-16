@@ -22,6 +22,9 @@ public:
     // コンストラクタ
     PlayingField()
     {
+        // 乱数の初期化
+        srand((unsigned)time(NULL));
+
         // 10組のカードを生成
         for (int i = 0; i < 10; i++)
         {
