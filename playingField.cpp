@@ -31,7 +31,7 @@ public:
             // 重複判定用のフラグ
             bool isDuplicate = false;
             // 数字初期化
-            int num = 0;
+            int numRandom = 0;
             // マーク初期化
             Suit suit;
 
@@ -39,17 +39,17 @@ public:
             do
             {
                 // 1~10の数字をランダムに生成
-                num = rand() % 10 + 1;
+                numRandom = rand() % 10 + 1;
 
                 // suitをランダムに生成
-                int random = rand() % 41;
-                if (random == 0) // Jokerは1/41の確率で生成する
+                int suitRandom = rand() % 41;
+                if (suitRandom == 0) // Jokerは1/41の確率で生成する
                 {
                     suit = Joker;
                 }
                 else // それ以外は1/4の確率で生成する
                 {
-                    switch (random % 4)
+                    switch (suitRandom % 4)
                     {
                     case 0:
                         suit = Spade;
@@ -71,7 +71,7 @@ public:
                 {
                     isDuplicate = false;
 
-                    if (cards[j].getNumber() == num && cards[j].getSuit() == suit)
+                    if (cards[j].getNumber() == numRandom && cards[j].getSuit() == suit)
                     {
                         isDuplicate = true;
                         break;
@@ -85,23 +85,31 @@ public:
             } while (isDuplicate);
 
             // カードを生成
-            cards[i].setCard(num, suit);
-            cards[10 + i].setCard(num, suit);
+            cards[i].setCard(numRandom, suit);
+            cards[(cardNum / 2) + i].setCard(numRandom, suit);
         }
+
+        // 全てのカードを表示
+        for (int i = 0; i < cardNum; i++)
+        {
+            cout << "num:  " << cards[i].getNumber() << ",  suit:  " << static_cast<char>(cards[i].getSuit()) << endl;
+        }
+        cout << "suffle" << endl;
 
         // カードをシャッフル
         for (int i = 0; i < cardNum; i++)
         {
             int random = rand() % cardNum;
-            GameCard tmp = cards[i];
+            GameCard temp = cards[i];
             cards[i] = cards[random];
-            cards[random] = tmp;
+            cards[random] = temp;
         }
 
         // カード番号を設定
         for (int i = 0; i < cardNum; i++)
         {
             cards[i].setCardNumber(i + 1);
+            cout << "num:  " << cards[i].getNumber() << ",  suit:  " << static_cast<char>(cards[i].getSuit()) << endl;
         }
     }
 
