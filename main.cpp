@@ -2,7 +2,7 @@
 #include "game.cpp"
 
 // 実行方法
-// g++ -o main main.cpp card.cpp
+// g++ -o main main.cpp
 
 using namespace std;
 
