@@ -35,9 +35,10 @@ public:
         cout << player[0].getName() << " vs " << player[1].getName() << endl;
 
         int currentPlayerIndex = 0;
+        int cardNum = playingField.getCardNum() - 1;
 
         // ゲームを進行
-        while (!playingField.isAllPaired())
+        while (1)
         {
             // カードをめくる
             int flipCount = 0;
@@ -54,9 +55,9 @@ public:
 
             while (flipCount < 2)
             {
-                cout << "めくるカードの番号を入力してください(1~20): ";
+                cout << "めくるカードの番号を入力してください(1~" << cardNum + 1 << "): ";
                 cin >> flipCardNumber[flipCount];
-                if (flipCardNumber[flipCount] < 1 || flipCardNumber[flipCount] > 20)
+                if (flipCardNumber[flipCount] < 1 || flipCardNumber[flipCount] > cardNum + 1)
                 {
                     cout << "Error: 不適切な番号が入力されました" << endl;
                 }
@@ -80,22 +81,36 @@ public:
 
             if (isPaired)
             {
-                cout << "****************** Good Pair ! ******************" << endl;
-                cout << "       おめでとうございます！  ペアが揃いました！       " << endl;
-                cout << "*************************************************\n"
-                     << endl;
-                cout << "もう一度挑戦できます\n"
-                     << endl;
-                player[currentPlayerIndex].addScore();
-                playingField.resetCard();
-                cout << "\n\n\n";
-                cout << "続けますか？(y/n):";
-                char ok;
-                cin >> ok;
-                cout << "\n\n\n";
-                if (tolower(ok) == 'n')
+                if (playingField.isAllPaired())
                 {
-                    currentPlayerIndex = (currentPlayerIndex + 1) % 2;
+                    cout << "****************** Good Pair ! ******************" << endl;
+                    cout << "       おめでとうございます！  全てのペアが揃いました！       " << endl;
+                    cout << "*************************************************\n"
+                         << endl;
+                    cout << "\n\n\n";
+                    cout << "Enterを押して結果を確認しましょう!\n\n"
+                         << endl;
+                    player[currentPlayerIndex].addScore();
+                    playingField.resetCard();
+                    cin.ignore();
+                    cin.get();
+                    cout << "\n\n\n";
+                    break;
+                }
+                else
+                {
+                    cout << "****************** Good Pair ! ******************" << endl;
+                    cout << "       おめでとうございます！  ペアが揃いました！       " << endl;
+                    cout << "*************************************************\n"
+                         << endl;
+                    cout << "\n\n\n";
+                    cout << "もう一度挑戦できます!Enterを押してください。\n\n"
+                         << endl;
+                    player[currentPlayerIndex].addScore();
+                    playingField.resetCard();
+                    cin.ignore();
+                    cin.get();
+                    cout << "\n\n\n";
                 }
             }
             else
@@ -115,6 +130,7 @@ public:
             printCurrentScore();
         }
         // 結果を表示
+        cout << "\n\n\n\n\n\n\n\n\n";
         cout << "*************************************************" << endl;
         cout << "*                      結果                      *" << endl;
         cout << "*************************************************\n"

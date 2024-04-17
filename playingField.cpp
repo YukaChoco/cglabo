@@ -9,9 +9,9 @@ class PlayingField
 {
 private:
     // カードの枚数
-    static const int cardNum = 16;
+    static const int cardNum = 4;
     // カードの列数
-    static const int columnNum = 4;
+    static const int columnNum = 2;
     // カードの行数
     static const int rowNum = cardNum / columnNum;
 
@@ -111,6 +111,12 @@ public:
             cards[i].setCardNumber(i + 1);
             cout << "num:  " << cards[i].getNumber() << ",  suit:  " << static_cast<char>(cards[i].getSuit()) << endl;
         }
+    }
+
+    // カードの枚数を取得する関数
+    int getCardNum()
+    {
+        return cardNum;
     }
 
     // カードを表示する関数
